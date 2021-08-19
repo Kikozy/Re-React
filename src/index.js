@@ -1,7 +1,10 @@
+//核心库
 import React from 'react';
+//提供与DOM相关的功能
 import ReactDOM from 'react-dom';
-import './index.css';
+
 import App from './App';
+//性能检测？
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
