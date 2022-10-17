@@ -1,20 +1,15 @@
-//核心库
-import React from 'react';
-//提供与DOM相关的功能
-import ReactDOM from 'react-dom';
+import ReactDOM from "react-dom"
+import App from "./App"
 
-import App from './App';
-//性能检测？
-import reportWebVitals from './reportWebVitals';
+console.log(ReactDOM)
+// reactDOM是用于渲染Dom元素的
+
+/* render方法拥有两个参数
+参数① 接收一个组件
+参数② 要注入的标签
+*/
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+    <App />,
+    document.getElementById("root")
+)
