@@ -1,15 +1,7 @@
-import ReactDOM from "react-dom"
+//用于替代ReactDOM.render，没有它React18的新特性将不能工作
+import { createRoot } from "react-dom/client"
 import App from "./App"
 
-console.log(ReactDOM)
-// reactDOM是用于渲染Dom元素的
-
-/* render方法拥有两个参数
-参数① 接收一个组件
-参数② 要注入的标签
-*/
-
-ReactDOM.render(
-    <App />,
-    document.getElementById("root")
-)
+const container = document.getElementById("root")
+const root = createRoot(container)
+root.render(<App myData="测试数据" />)
