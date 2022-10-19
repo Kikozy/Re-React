@@ -1,29 +1,25 @@
-import React, { Component } from "react"
+import { useEffect, useState } from "react"
 
-import './List.css'
-
-export default class List extends Component {
-	constructor(props) {
-		console.log(props)
-		super(props)
-		this.state= {
-			data: 'base'
+export default function List() {
+	const [num, setNum] = useState(0)
+	//挂载与销毁
+	useEffect(() => {
+		console.log("挂载完毕")
+		return () => {
+			console.log("销毁完毕")
 		}
-	}
-	//从props中获取state
-	static getDerivedStateFromProps(nextProps, prevState) {
-		//nextProps新的值
-		//之前的state
-		console.log(nextProps, prevState)
-		return true
-	}
-	render() {
-		return (
-			<div className="box">
-				{this.props.arr.map((item) => (
-					<p key={item}>{item}</p>
-				))}
+	}, [])
+	//watch 监听
+	useEffect(() => {
+		console.log("[hook-watch]-> num:", num)
+	}, [num])
+
+	return (
+		<>
+			<div onClick={() => setNum(num + 1)}>
+				<p>List组件</p>
+				<div>数量：{num}</div>
 			</div>
-		)
-	}
+		</>
+	)
 }
